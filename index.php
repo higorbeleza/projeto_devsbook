@@ -19,12 +19,10 @@ require 'partials/menu.php';
 
             <?php require 'partials/feed-editor.php';?>
 
-            <?php foreach($feed as $item): ?>
+            <?php foreach($feed as $item):?>
                 <?php require 'partials/feed-item.php';?>
-            <?php endforeach;?>
-
-
-
+            <?php endforeach; ?>
+            
         </div>
 
         <div class="column side pl-5">

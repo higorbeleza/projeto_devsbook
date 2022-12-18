@@ -7,11 +7,11 @@ class UserRelationDaoMysql implements UserRelationDAO {
     public function __construct(PDO $driver){
         $this->pdo = $driver;
     }
-
+    
     public function insert(UserRelation $u) {
 
     }
-    
+
     public function getRelationsFrom($id) {
         $users = [$id];
 
@@ -24,10 +24,10 @@ class UserRelationDaoMysql implements UserRelationDAO {
         if($sql->rowCount() > 0) {
             $data = $sql->fetchAll();
             foreach($data as $item) {
-                $users[] = $item['user_to'];
+                $users[] = $item['users_to'];
             };
         }
-        
+
         return $users;
     }
 }
