@@ -31,7 +31,7 @@ class UserDaoMysql implements UserDAO {
             $u->followers = $urDaoMysql->getFollowers($u->id);
             foreach($u->followers as $key => $follower_id) {
                 $newUser = $this->findById($follower_id);
-                $followers[$key] = $newUser;
+                $u->followers[$key] = $newUser;
             }
 
             // Following = quem o usuario segue
