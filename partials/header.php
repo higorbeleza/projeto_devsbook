@@ -19,7 +19,7 @@ $firstName = current(explode(' ', $userInfo->name));
             <div class="head-side">
                 <div class="head-side-left">
                     <div class="search-area">
-                        <form method="GET">
+                        <form method="GET" action="<?=$base;?>/search.php">
                             <input type="search" placeholder="Pesquisar" name="s" />
                         </form>
                     </div>
