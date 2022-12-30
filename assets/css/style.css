@@ -232,13 +232,36 @@ header .head-side {
     display: none;
     color:#333;
 }
-.feed-new-send {
+.feed-new-send,
+.feed-new-photo {
     cursor: pointer;
     margin-right:5px;
 }
-.feed-new-send img {
+.feed-new-send img,
+.feed-new-photo img {
     width:25px;
     height:25px;
+}
+.feed-new-file {
+    position: absolute;
+    left: -500px;
+    top: -500px;
+}
+
+.feed-pagination a {
+    display: inline-block;
+    padding: 7px 10px;
+    border: 1px solid #CCC;
+    margin: 5px;
+    text-decoration: none;
+    color: #000;
+    border-radius: 3px;
+}
+.feed-pagination a:hover {
+    background-color: #DDD;
+}
+.feed-pagination a.active {
+    background-color: #FFF;
 }
 
 .banners .box-body {
@@ -289,7 +312,10 @@ header .head-side {
 }
 
 .profile-info-item {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .profile-info-item-n {
     font-weight: bold;
@@ -350,11 +376,16 @@ header .head-side {
 
 .user-photo-item {
     margin-right:10px;
+    max-width: 25%;
 }
 .user-photo-item:last-child {
     margin-right:0;
 }
 .user-photo-item img {
+    max-width: 100%;
+}
+
+.full-user-photos .user-photo-item {
     max-width: 100%;
 }
 
@@ -401,30 +432,22 @@ header .head-side {
 .config-form input {
     font-size: 14px;
     width: 100%;
-    max-width: 300px;
-    padding: 10px;
-    border-radius: 10px;
-    border: 0;
-    outline: none;
-}
-.config-form .button {
-    cursor: pointer;
-    font-size: 14px;
+    max-width: 500px;
     padding: 10px 15px;
-    border-radius: 10px;
-    border: none;
-    color: white;
-    background-color: #4a76a8;
-    box-shadow: 0px 0px 4px #353535;
 }
-.config-form .button:hover {
-    background-color: #224b7a;
-}
-
-.config-form .mini-photo {
+.config-form .mini {
     max-height: 100px;
 }
-
+.button {
+    border: 0;
+    padding: 10px 20px;
+    background-color: #4a76a8;
+    border-radius: 10px;
+    color: #FFF;
+    font-size: 15px;
+    box-shadow: 0px 0px 3px #999;
+    text-decoration: none;
+}
 
 @media (max-width: 992px) {
     header .head-side-right {

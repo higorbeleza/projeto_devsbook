@@ -59,7 +59,7 @@ if($name && $email) {
         }
     }
 
-    // Avatar
+    // AVATAR
     if(isset($_FILES['avatar']) && !empty($_FILES['avatar']['tmp_name'])) {
         $newAvatar = $_FILES['avatar'];
 
@@ -108,15 +108,15 @@ if($name && $email) {
         }
     }
 
-    // COVER
+    // Cover 
     if(isset($_FILES['cover']) && !empty($_FILES['cover']['tmp_name'])) {
-        $newCover = $_FILES['cover'];
+        $newcover = $_FILES['cover'];
 
-        if(in_array($newCover['type'], ['image/jpeg', 'image/jpg', 'image/png'])) {
+        if(in_array($newcover['type'], ['image/jpeg', 'image/jpg', 'image/png'])) {
             $coverWidth = 850;
-            $coverHeight = 310;
+            $coverHeight = 313;
 
-            list($widthOrig, $heightOrig) = getimagesize($newCover['tmp_name']);
+            list($widthOrig, $heightOrig) = getimagesize($newcover['tmp_name']);
             $ratio = $widthOrig / $heightOrig;
 
             $newWidth = $coverWidth;
@@ -133,13 +133,13 @@ if($name && $email) {
             $y = $y<0 ? $y/2 : $y;
 
             $finalImage = imagecreatetruecolor($coverWidth, $coverHeight);
-            switch($newCover['type']) {
+            switch($newcover['type']) {
                 case 'image/jpeg':
                 case 'image/jpg':
-                    $image = imagecreatefromjpeg($newCover['tmp_name']);
+                    $image = imagecreatefromjpeg($newcover['tmp_name']);
                 break;
                 case 'image/png':
-                    $image = imagecreatefrompng($newCover['tmp_name']);
+                    $image = imagecreatefrompng($newcover['tmp_name']);
                 break;
             }
 
@@ -156,7 +156,7 @@ if($name && $email) {
             $userInfo->cover = $coverName;
         }
     }
-
+    
     $userDao->update($userInfo);
 }
 
