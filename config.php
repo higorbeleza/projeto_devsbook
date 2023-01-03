@@ -2,6 +2,9 @@
 session_start();
 $base = 'http://localhost/devsbook';
 
+$maxWidth = 800;
+$maxHeight = 800;
+
 $db_name = 'devsbook';
 $db_host = 'localhost';
 $db_user = 'root';
